@@ -20,10 +20,11 @@ HELP = 'See CLAUDE.md, "Security hardening for GitHub Actions".'
 # Claude Code runs auto mode only on claude-opus-4-6 and newer models. On an older model it
 # falls back to its default permission mode, with no safety review.
 AUTO_MODE_MIN_VERSION = (4, 6)
-# The version in a model name: claude-opus-4-6, claude-sonnet-4-5-20250929, claude-3-5-sonnet-latest.
+# The version in a model name: claude-opus-4-6, claude-opus:4-6,
+# claude-sonnet-4-5-20250929, claude-3-5-sonnet-latest.
 MODEL_VERSION = re.compile(
-    r"claude-(?:(?:opus|sonnet|haiku)-(\d+)(?:-(\d{1,2}))?"
-    r"|(\d+)(?:-(\d{1,2}))?-(?:opus|sonnet|haiku))(?![\d.])"
+    r"claude-(?:(?:opus|sonnet|haiku)[:\-](\d+)(?:[:\-](\d{1,2}))?"
+    r"|(\d+)(?:[:\-](\d{1,2}))?-(?:opus|sonnet|haiku))(?![\d.])"
 )
 
 # Key: "<workflow file name>:<job id>". Value: why that job is exempt from the table's rule.
