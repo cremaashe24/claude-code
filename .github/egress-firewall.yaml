@@ -23,5 +23,7 @@ allow:
   - azure.archive.ubuntu.com
   - archive.ubuntu.com
   - security.ubuntu.com
+  # Microsoft Entra / Azure OIDC login for actions that authenticate with Azure
+  - login.microsoftonline.com
   # Statsig event logging (claude-dedupe-issues.yml, "Log duplicate comment event to Statsig")
   - events.statsigapi.net
